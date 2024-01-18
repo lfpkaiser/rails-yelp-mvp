@@ -1,0 +1,17 @@
+<h2>Welcome to <%=@restaurant.name%>!</h2>
+
+<h4>Details</h4>
+<p>Restaurant type: <%= @restaurant.category %></p>
+<p>Address: <%=@restaurant.address%></p>
+<p>Phone Number: <%=@restaurant.phone_number%></p>
+
+<h4>REVIEWS</h4>
+
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %> - Rating: <%= review.rating %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New Review", new_restaurant_review_path(@restaurant) %>
+<%= link_to "Return", restaurants_path(@restaurant) %>

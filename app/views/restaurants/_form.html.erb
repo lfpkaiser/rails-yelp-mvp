@@ -1,0 +1,10 @@
+<%= simple_form_for(restaurant) do |f| %>
+  <div class="form-group">
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :category, collection: Restaurant::CATEGORIES, prompt: "Select a category" %>
+
+  <%= f.button :submit %>
+  </div>
+<% end %>
